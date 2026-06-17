@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
   }) //Permet la transition même par le bouton précédent
   
   const startTransition = async (url) => {
-      const html = await fetch(url, { method: "POST", "credentials": "includes"});
+      const html = await fetch(url);
       console.log(html);
       const htmlStr = await html.text(); //récupère le HTML sous string
       console.log(htmlStr);
