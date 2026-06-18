@@ -179,5 +179,23 @@ document.addEventListener("DOMContentLoaded", (event) => {
   } //Permet de randomiser la génération des mots
   
   addWordsRandomly();
+
+//**********************************************************************************
+//GRID PROJET
+//**********************************************************************************
+  const items = document.querySelectorAll(".grid_item");
+  const containers = document.querySelectorAll(".item_container");
+
+  for(let i = 0; i < items.length; i++) {
+      if(items[i].height > items[i].width){
+          containers[i].style.gridRow = "span 2";
+      }
+  }
+
+  for(let i = 0; i < items.length; i++) {
+      if(!items[i].getAttribute("src") || items[i].getAttribute("src").trim() ==="") {
+          containers[i].style.display = "none";
+      }
+  }
     
 });
