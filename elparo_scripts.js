@@ -104,8 +104,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
       });
   }
 
-  //**********************************************************************************
-//TAGCLOUD (LAST TO NOT DISTURB OTHER PAGES)
+//**********************************************************************************
+//TAGCLOUD
 //**********************************************************************************
 
   const words = document.querySelector(".tagCloud_words");
