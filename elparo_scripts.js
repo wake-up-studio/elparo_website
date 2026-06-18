@@ -179,9 +179,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
   } //Permet de randomiser la génération des mots
   
   addWordsRandomly();
-    
-});
-  
+
 //**********************************************************************************
 //GENERATION INFOS PROJET
 //**********************************************************************************
@@ -232,3 +230,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
           containers[i].style.display = "none";
       }
   }
+  
+});
+  
+
