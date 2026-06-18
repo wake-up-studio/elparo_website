@@ -207,6 +207,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const video_zoom = document.querySelector(".video_zoom");
     const video_buttons = document.querySelector(".video_buttons");
 
+  console.log(video_zoom);
+  console.log(video_close);
+
     let src = video_content.getAttribute("src");
 
     if(src.trim === '' || !src){
@@ -228,7 +231,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
             video_container.style.width = "35vw";
             video_container.style.height = "auto";
             video_buttons.style.width = "35vw";
-            document.querySelector("body:not(.video_lightbox)").style.filter = "none";
           console.log("click else");
         }
     })
