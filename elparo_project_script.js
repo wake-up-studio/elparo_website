@@ -148,6 +148,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 //**********************************************************************************
   const items = document.querySelectorAll(".grid_item");
   const containers = document.querySelectorAll(".item_container");
+  console.log(items[2].width);
 
   for(let i = 0; i < items.length; i++) {
       if(items[i].height > items[i].width){
