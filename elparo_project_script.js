@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
       content.style.display = "none";
       title.style.display = "none";
     }
-  });
+  })
   
 //**********************************************************************************
 //GENERATION CONTAINER VIDEO
