@@ -189,6 +189,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
   for(let i = 0; i < items.length; i++) {
       if(items[i].height > items[i].width){
           containers[i].style.gridRow = "span 2";
+          containers[i].style.padding = "10px";
       }
   }
 
