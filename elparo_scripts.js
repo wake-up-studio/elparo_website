@@ -105,7 +105,58 @@ document.addEventListener("DOMContentLoaded", (event) => {
   }
 
 //**********************************************************************************
-//TAGCLOUD
+//GENERATION INFOS PROJET
+//**********************************************************************************
+  const array = ["dimension", "materials", "location", "mecenat", "photo_credit"];
+
+  array.forEach( data => {
+    const content = document.querySelector("." + data + "_content");
+    const title = document.querySelector("." + data + "_title");
+  
+    if(!content.innerHTML){
+      content.style.display = "none";
+      title.style.display = "none";
+    }
+    else{
+      console.log('try again');
+    }
+  });
+  
+//**********************************************************************************
+//GENERATION CONTAINER VIDEO
+//**********************************************************************************
+  const video_content = document.querySelector(".video_content");
+  const video_container = document.querySelector(".video_container");
+  
+  let src = video_content.getAttribute("src");
+  
+  if(src.trim === '' || !src){
+    video_container.style.display = "none";
+  }
+  else if(src){
+    video_container.style.display = "block";
+  }
+  
+//**********************************************************************************
+//GRID PROJET
+//**********************************************************************************
+  const items = document.querySelectorAll(".grid_item");
+  const containers = document.querySelectorAll(".item_container");
+
+  for(let i = 0; i < items.length; i++) {
+      if(items[i].height > items[i].width){
+          containers[i].style.gridRow = "span 2";
+      }
+  }
+
+  for(let i = 0; i < items.length; i++) {
+      if(!items[i].getAttribute("src") || items[i].getAttribute("src").trim() ==="") {
+          containers[i].style.display = "none";
+      }
+  }
+
+  //**********************************************************************************
+//TAGCLOUD (LAST TO NOT DISTURB OTHER PAGES)
 //**********************************************************************************
 
   const words = document.querySelector(".tagCloud_words");
@@ -179,56 +230,5 @@ document.addEventListener("DOMContentLoaded", (event) => {
   } //Permet de randomiser la génération des mots
   
   addWordsRandomly();
-
-//**********************************************************************************
-//GENERATION INFOS PROJET
-//**********************************************************************************
-  const array = ["dimension", "materials", "location", "mecenat", "photo_credit"];
-
-  array.forEach( data => {
-    const content = document.querySelector("." + data + "_content");
-    const title = document.querySelector("." + data + "_title");
-  
-    if(!content.innerHTML){
-      content.style.display = "none";
-      title.style.display = "none";
-    }
-    else{
-      console.log('try again');
-    }
-  });
-  
-//**********************************************************************************
-//GENERATION CONTAINER VIDEO
-//**********************************************************************************
-  const video_content = document.querySelector(".video_content");
-  const video_container = document.querySelector(".video_container");
-  
-  let src = video_content.getAttribute("src");
-  
-  if(src.trim === '' || !src){
-    video_container.style.display = "none";
-  }
-  else if(src){
-    video_container.style.display = "block";
-  }
-  
-//**********************************************************************************
-//GRID PROJET
-//**********************************************************************************
-  const items = document.querySelectorAll(".grid_item");
-  const containers = document.querySelectorAll(".item_container");
-
-  for(let i = 0; i < items.length; i++) {
-      if(items[i].height > items[i].width){
-          containers[i].style.gridRow = "span 2";
-      }
-  }
-
-  for(let i = 0; i < items.length; i++) {
-      if(!items[i].getAttribute("src") || items[i].getAttribute("src").trim() ==="") {
-          containers[i].style.display = "none";
-      }
-  }
     
 });
