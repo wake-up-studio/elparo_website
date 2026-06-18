@@ -185,11 +185,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
 //**********************************************************************************
 //GENERATION INFOS PROJET
 //**********************************************************************************
-  const array = ["dimension", "materials", "location", "mecenat", "photo_credit"];
+  const infos = ["dimension", "materials", "location", "mecenat", "photo_credit"];
 
-  array.forEach( data => {
-    const content = document.querySelector("." + data + "_content");
-    const title = document.querySelector("." + data + "_title");
+  infos.forEach( info => {
+    const content = document.querySelector("." + info + "_content");
+    const title = document.querySelector("." + info + "_title");
   
     if(!content.innerHTML){
       content.style.display = "none";
