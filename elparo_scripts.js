@@ -222,18 +222,21 @@ document.addEventListener("DOMContentLoaded", (event) => {
             video_container.style.width = "90vw";
             video_container.style.height = "90vh";
             video_buttons.style.width = "90vw";
+          console.log("click if");
         }
         else{
             video_container.style.width = "35vw";
             video_container.style.height = "auto";
             video_buttons.style.width = "35vw";
             document.querySelector("body:not(.video_lightbox)").style.filter = "none";
+          console.log("click else");
         }
     })
 
     video_close.addEventListener("click", ()=>{
         video_container.style.display = "none";
         video_buttons.style.display = "none";
+      console.log("click close");
     })
   
   
