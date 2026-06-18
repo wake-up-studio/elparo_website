@@ -95,6 +95,28 @@ document.addEventListener("DOMContentLoaded", (event) => {
       title.style.display = "none";
     }
   })
+
+  //**********************************************************************************
+//GRID PROJET
+//**********************************************************************************
+  const items = document.querySelectorAll(".grid_item");
+  const containers = document.querySelectorAll(".item_container");
+  console.log(items[2].src);
+  console.log(iems[10].src);
+  console.log(items[2]);
+  console.log(iems[10]);
+
+  for(let i = 0; i < items.length; i++) {
+      if(items[i].height > items[i].width){
+          containers[i].style.gridRow = "span 2";
+      }
+  }
+
+  for(let i = 0; i < items.length; i++) {
+      if(!items[i].getAttribute("src") || items[i].getAttribute("src").trim() ==="") {
+          containers[i].style.display = "none";
+      }
+  }
   
 //**********************************************************************************
 //GENERATION CONTAINER VIDEO
@@ -132,29 +154,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
         video_container.style.display = "none";
         video_buttons.style.display = "none";
     })
-  
-  
-//**********************************************************************************
-//GRID PROJET
-//**********************************************************************************
-  const items = document.querySelectorAll(".grid_item");
-  const containers = document.querySelectorAll(".item_container");
-  console.log(items[2].src);
-  console.log(iems[10].src);
-  console.log(items[2]);
-  console.log(iems[10]);
-
-  for(let i = 0; i < items.length; i++) {
-      if(items[i].height > items[i].width){
-          containers[i].style.gridRow = "span 2";
-      }
-  }
-
-  for(let i = 0; i < items.length; i++) {
-      if(!items[i].getAttribute("src") || items[i].getAttribute("src").trim() ==="") {
-          containers[i].style.display = "none";
-      }
-  }
   
 });
   
