@@ -181,6 +181,39 @@ document.addEventListener("DOMContentLoaded", (event) => {
   addWordsRandomly();
 
 //**********************************************************************************
+//GENERATION INFOS PROJET
+//**********************************************************************************
+  const array = ["dimension", "materials", "location", "mecenat", "photo_credit"];
+
+  array.forEach( data => {
+    const content = document.querySelector("." + data + "_content");
+    const title = document.querySelector("." + data + "_title");
+  
+    if(!content.innerHTML){
+      content.style.display = "none";
+      title.style.display = "none";
+    }
+    else{
+      console.log('try again');
+    }
+  });
+  
+//**********************************************************************************
+//GENERATION CONTAINER VIDEO
+//**********************************************************************************
+  const video_content = document.querySelector(".video_content");
+  const video_container = document.querySelector(".video_container");
+  
+  let src = video_content.getAttribute("src");
+  
+  if(src.trim === '' || !src){
+    video_container.style.display = "none";
+  }
+  else if(src){
+    video_container.style.display = "block";
+  }
+  
+//**********************************************************************************
 //GRID PROJET
 //**********************************************************************************
   const items = document.querySelectorAll(".grid_item");
