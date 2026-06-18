@@ -202,16 +202,40 @@ document.addEventListener("DOMContentLoaded", (event) => {
 //GENERATION CONTAINER VIDEO
 //**********************************************************************************
   const video_content = document.querySelector(".video_content");
-  const video_container = document.querySelector(".video_container");
+    const video_container = document.querySelector(".video_container");
+    const video_close = document.querySelector(".video_close");
+    const video_zoom = document.querySelector(".video_zoom");
+    const video_buttons = document.querySelector(".video_buttons");
+
+    let src = video_content.getAttribute("src");
+
+    if(src.trim === '' || !src){
+        video_content.style.display = "none"
+        video_container.style.display = "none";
+    }
+    else if(src){
+        video_container.style.display = "block";
+    }
+
+    video_zoom.addEventListener("click", ()=>{
+        if(video_container.style.width === "35vw"){
+            video_container.style.width = "90vw";
+            video_container.style.height = "90vh";
+            video_buttons.style.width = "90vw";
+        }
+        else{
+            video_container.style.width = "35vw";
+            video_container.style.height = "auto";
+            video_buttons.style.width = "35vw";
+            document.querySelector("body:not(.video_lightbox)").style.filter = "none";
+        }
+    })
+
+    video_close.addEventListener("click", ()=>{
+        video_container.style.display = "none";
+        video_buttons.style.display = "none";
+    })
   
-  let src = video_content.getAttribute("src");
-  
-  if(src.trim === '' || !src){
-    video_container.style.display = "none";
-  }
-  else if(src){
-    video_container.style.display = "block";
-  }
   
 //**********************************************************************************
 //GRID PROJET
