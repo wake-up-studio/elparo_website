@@ -94,9 +94,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
       content.style.display = "none";
       title.style.display = "none";
     }
-    else{
-      console.log('try again');
-    }
   });
   
 //**********************************************************************************
@@ -107,9 +104,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const video_close = document.querySelector(".video_close");
     const video_zoom = document.querySelector(".video_zoom");
     const video_buttons = document.querySelector(".video_buttons");
-
-  console.log(video_zoom);
-  console.log(video_close);
 
     let src = video_content.getAttribute("src");
 
@@ -126,20 +120,17 @@ document.addEventListener("DOMContentLoaded", (event) => {
             video_container.style.width = "90vw";
             video_container.style.height = "90vh";
             video_buttons.style.width = "90vw";
-          console.log("click if");
         }
         else{
             video_container.style.width = "35vw";
             video_container.style.height = "auto";
             video_buttons.style.width = "35vw";
-          console.log("click else");
         }
     })
 
     video_close.addEventListener("click", ()=>{
         video_container.style.display = "none";
         video_buttons.style.display = "none";
-      console.log("click close");
     })
   
   
