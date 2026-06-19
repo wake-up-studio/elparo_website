@@ -122,12 +122,14 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const video_close = document.querySelector(".video_close");
     const video_zoom = document.querySelector(".video_zoom");
     const video_buttons = document.querySelector(".video_buttons");
+  const video_lightbox = document.querySelector(".video_lightbox");
 
     let src = video_content.getAttribute("src");
 
     if(src.trim === '' || !src){
-        video_content.style.display = "none"
+        video_content.style.display = "none";
         video_container.style.display = "none";
+        video_lightbox.style.display = "none";
     }
     else if(src){
         video_container.style.display = "block";
