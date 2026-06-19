@@ -103,6 +103,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
   const containers = document.querySelectorAll(".item_container");
 
   for(let i = 0; i < items.length; i++) {
+    console.log(items[i].getAttribute("src");
       if(items[i].height > items[i].width){
           containers[i].style.gridRow = "span 2";
       }
