@@ -155,6 +155,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     video_close.addEventListener("click", ()=>{
         video_container.style.display = "none";
         video_buttons.style.display = "none";
+        video_lightbox.style.display = "none";
     })
   
 });
