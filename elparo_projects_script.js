@@ -84,65 +84,48 @@ document.addEventListener("DOMContentLoaded", (event) => {
 //**********************************************************************************
 //HOVER
 //**********************************************************************************
-   const projets = document.querySelectorAll(".projetFromProjets");
+  const projets = document.querySelectorAll(".projetFromProjets");
 
-    projets.forEach( projet => {
-        projet.addEventListener('mouseenter', () => {
-            animateTransitionHover().then( () => {});
-        });
-        projet.addEventListener('mouseleave', () => {
-            revealTransitionHover().then( () => {});
-        })
-    })
+  for(let i=0; i<projets.length; i++) {
+      projets[i].addEventListener('mouseenter', () => {
+          const tl = gsap.timeline();
 
-    function revealTransitionHover() {
-        return new Promise(resolve => {
-            const tl = gsap.timeline({
-                onComplete: resolve,
-            });
+          tl.fromTo(
+              `.hover_projets${i}`,
+              {translateY: "-100%"},
+              {
+                  translateY: 0,
+                  duration: 1,
+                  stagger: {
+                      each: 0.1,
+                      from: "start",
+                      grid: [1, 3],
+                  },
+                  ease: "expo.out",
+              },
+              0
+          );
+      });
+      projets[i].addEventListener('mouseleave', () => {
+          const tl = gsap.timeline();
 
-            tl.fromTo(
-                ".hover_projets",
-                {translateY: "0"},
-                {
-                    translateY: "100%",
-                    duration: 1,
-                    stagger: {
-                        each: 0.1,
-                        from: "start",
-                        grid: [1, 3],
-                    },
-                    ease: "expo.inOut",
-                },
-                0
-            );
-        })
-    }
+          tl.fromTo(
+              `.hover_projets${i}`,
+              {translateY: "0"},
+              {
+                  translateY: "100%",
+                  duration: 1,
+                  stagger: {
+                      each: 0.1,
+                      from: "start",
+                      grid: [1, 3],
+                  },
+                  ease: "expo.inOut",
+              },
+              0
+          );
+      })
+  }
 
-    function animateTransitionHover() {
-        return new Promise(resolve => {
-            const tl = gsap.timeline({
-                onComplete: resolve,
-            });
-
-            tl.fromTo(
-                ".hover_projets",
-                {translateY: "-100%"},
-                {
-                    translateY: 0,
-                    duration: 1,
-                    stagger: {
-                        each: 0.1,
-                        from: "start",
-                        grid: [1, 3],
-                    },
-                    ease: "expo.out",
-                },
-                0
-            );
-        })
-    }
-
-  
 });
   
