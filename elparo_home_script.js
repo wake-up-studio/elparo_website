@@ -131,7 +131,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
       newLi.className = `word word_${i}`;
       a.textContent = tags[j];
   
-      a.setAttribute("href", `projets/${tags[j].trim().toLowerCase()}`);
+      a.setAttribute("href", `projets/${tags[j].toLowerCase().replaceAll(' ', '')}`);
   
       words.appendChild(div);
       div.appendChild(newLi);
