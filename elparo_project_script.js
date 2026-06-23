@@ -106,7 +106,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
       console.log(items[i].width);
       if(items[i].height > items[i].width){
           containers[i].style.gridRow = "span 2";
-          containers[i].style.objectFit = "cover";
+          items[i].style.height = "100%";
+          items[i].style.objectFit = "cover";
       }
   }
 
