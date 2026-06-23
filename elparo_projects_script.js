@@ -85,6 +85,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 //HOVER
 //**********************************************************************************
   const projets = document.querySelectorAll(".projetFromProjets");
+  console.log(projets);
 
     for(let i=0; i<projets.length; i++) {
         projets[i].addEventListener('mouseenter', () => {
