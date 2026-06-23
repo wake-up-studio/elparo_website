@@ -86,46 +86,45 @@ document.addEventListener("DOMContentLoaded", (event) => {
 //**********************************************************************************
   const projets = document.querySelectorAll(".projetFromProjets");
 
-  for(let i=0; i<projets.length; i++) {
-      projets[i].addEventListener('mouseenter', () => {
-          const tl = gsap.timeline();
+    for(let i=0; i<projets.length; i++) {
+        projets[i].addEventListener('mouseenter', () => {
+            const tl = gsap.timeline();
 
-          tl.fromTo(
-              `.hover_projets${i}`,
-              {translateY: "-100%"},
-              {
-                  translateY: 0,
-                  duration: 1,
-                  stagger: {
-                      each: 0.1,
-                      from: "start",
-                      grid: [1, 3],
-                  },
-                  ease: "expo.out",
-              },
-              0
-          );
-      });
-      projets[i].addEventListener('mouseleave', () => {
-          const tl = gsap.timeline();
+            tl.fromTo(
+                `.hover_projets${i}`,
+                {translateY: "-100%"},
+                {
+                    translateY: 0,
+                    duration: 1,
+                    stagger: {
+                        each: 0.1,
+                        from: "start",
+                        grid: [1, 3],
+                    },
+                    ease: "expo.out",
+                },
+                0
+            );
+        });
+        projets[i].addEventListener('mouseleave', () => {
+            const tl = gsap.timeline();
 
-          tl.fromTo(
-              `.hover_projets${i}`,
-              {translateY: "0"},
-              {
-                  translateY: "100%",
-                  duration: 1,
-                  stagger: {
-                      each: 0.1,
-                      from: "start",
-                      grid: [1, 3],
-                  },
-                  ease: "expo.inOut",
-              },
-              0
-          );
-      })
-  }
-
+            tl.fromTo(
+                `.hover_projets${i}`,
+                {translateY: "0"},
+                {
+                    translateY: "100%",
+                    duration: 1,
+                    stagger: {
+                        each: 0.1,
+                        from: "start",
+                        grid: [1, 3],
+                    },
+                    ease: "expo.inOut",
+                },
+                0
+            );
+        })
+    }
 });
   
