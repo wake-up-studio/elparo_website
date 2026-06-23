@@ -1,4 +1,5 @@
 const words = document.querySelector(".tagCloud_words");
+console.log("Hey cruel world 3");
 
 let tags = [
     "Wood", "Upcycling",  "Metal", "Origami",
