@@ -95,7 +95,20 @@ document.addEventListener("DOMContentLoaded", (event) => {
       title.style.display = "none";
     }
   })
- 
+
+//**********************************************************************************
+//GENERATION GRID
+//**********************************************************************************
+  const items = document.querySelectorAll(".grid_item");
+  const containers = document.querySelectorAll(".item_container");
+
+  for(let i = 0; i < items.length; i++) {
+      console.log(items[i].width);
+      if(items[i].height > items[i].width){
+          containers[i].style.gridRow = "span 2";
+      }
+  }
+
 //**********************************************************************************
 //GENERATION CONTAINER VIDEO
 //**********************************************************************************
