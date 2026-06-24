@@ -85,15 +85,18 @@ document.addEventListener("DOMContentLoaded", (event) => {
 //HOVER
 //**********************************************************************************
   const projets = document.querySelectorAll(".projetFromProjets");
-  console.log(projets);
 
     for(let i=0; i<projets.length; i++) {
-        projets[i].addEventListener('mouseenter', () => {
-            const tl = gsap.timeline();
+        let isComplete = false;
 
-            tl.fromTo(
+        projets[i].addEventListener('mouseenter', () => {
+            let tl = gsap.timeline();
+
+            let hoverAnim = tl.fromTo(
                 `.hover_projets${i}`,
-                {translateY: "-100%"},
+                {
+                    translateY: "-100%"
+                },
                 {
                     translateY: 0,
                     duration: 1,
@@ -106,25 +109,39 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 },
                 0
             );
-        });
-        projets[i].addEventListener('mouseleave', () => {
-            const tl = gsap.timeline();
 
-            tl.fromTo(
-                `.hover_projets${i}`,
-                {translateY: "0"},
-                {
-                    translateY: "100%",
-                    duration: 1,
-                    stagger: {
-                        each: 0.1,
-                        from: "start",
-                        grid: [1, 3],
-                    },
-                    ease: "expo.inOut",
-                },
-                0
-            );
+            console.log(isComplete);
+
+            hoverAnim.eventCallback("onComplete", () => {
+                isComplete = true;
+                console.log(isComplete);
+            });
+
+            projets[i].addEventListener('mouseleave', () => {
+                if(isComplete === false) {
+                    tl.reverse();
+                    console.log(isComplete);
+                }
+                else{
+                    let tl2 = gsap.timeline();
+                    tl2.to(
+                        `.hover_projets${i}`,
+                        {
+                            translateY: "100%",
+                            duration: 1,
+                            stagger: {
+                                each: 0.1,
+                                from: "start",
+                                grid: [1, 3],
+                            },
+                            ease: "expo.inOut",
+                        },
+                        0
+                    );
+                    tl2.eventCallback("onComplete", () => {isComplete = false;});
+                    console.log(isComplete);
+                }
+            })
         })
     }
 });
