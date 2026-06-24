@@ -193,7 +193,7 @@ const tags = gsap.utils.toArray(".tag");
                         }
                     }, paused: config.paused, defaults: {ease: "none"}, onReverseComplete: () => tl.totalTime(tl.rawTime() + tl.duration() * 100)}),
                 length = items.length,
-                startX = items[0].offsetLeft,
+                //startX = items[0].offsetLeft,
                 times = [],
                 widths = [],
                 spaceBefore = [],
