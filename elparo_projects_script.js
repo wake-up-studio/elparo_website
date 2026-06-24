@@ -149,6 +149,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 //SCROLLBAR
 //**********************************************************************************
 const tags = gsap.utils.toArray(".tag_scrollbar");
+  console.log(tags);
 
     let activeElement;
     const loop = horizontalLoop(tags, {
