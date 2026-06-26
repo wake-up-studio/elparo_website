@@ -179,6 +179,33 @@ console.log("Hey cruel world 3");
   } //Permet de randomiser la génération des mots
   
   addWordsRandomly();
+
+//**********************************************************************************
+//APPARITION TEXTE
+//**********************************************************************************
+  
+   const tl_scroll = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".scroll_effect_text",
+            markers: true,
+            start: "15% bottom",
+            end: "150% bottom",
+            scrub: 1,
+            duration: 5000,
+        }
+    });
+
+    tl_scroll.to(
+        ".scroll_effect_text_item", {
+            translateX: "100vw",
+            stagger: {
+                each: 0.1,
+                from: "start",
+                grid: [1,3],
+            },
+            ease: "power3.out",
+        }
+    )
   
 });
   
