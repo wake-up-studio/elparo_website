@@ -125,9 +125,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     });
     
     ScrollTrigger.addEventListener("refreshInit", () => gsap.set(".image", {y: 0}));
-    }
-});
-
+  
 //**********************************************************************************
 //GENERATION CONTAINER VIDEO
 //**********************************************************************************
