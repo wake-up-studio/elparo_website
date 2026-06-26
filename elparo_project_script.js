@@ -128,7 +128,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         video_container.style.display = "none";
         video_lightbox.style.display = "none";
     }
-    else if(src){
+    else{
         video_container.style.display = "block";
     }
 
