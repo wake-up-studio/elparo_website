@@ -366,7 +366,7 @@ const tags = gsap.utils.toArray(".tag_scrollbar");
             return () => window.removeEventListener("resize", onResize); // cleanup
         });
         return timeline;
-
+    }
 //**********************************************************************************
 //BATCH
 //**********************************************************************************
