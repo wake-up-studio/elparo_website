@@ -378,7 +378,7 @@ const tags = gsap.utils.toArray(".tag_scrollbar");
         onLeave: batch => gsap.set(batch, {opacity: 0, y: -100, overwrite: true}),
         onEnterBack: batch => gsap.to(batch, {opacity: 1, y: 0, stagger: 0.15, overwrite: true}),
         onLeaveBack: batch => gsap.set(batch, {opacity: 0, y: 100, overwrite: true})
-    });
+    })
     
     ScrollTrigger.addEventListener("refreshInit", () => gsap.set(".image", {y: 0}));
 
