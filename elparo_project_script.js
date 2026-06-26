@@ -97,6 +97,18 @@ document.addEventListener("DOMContentLoaded", (event) => {
   })
 
 //**********************************************************************************
+//GENERATION DATE FORMAT
+//**********************************************************************************
+
+  let dateDOM = document.getElementById("date");
+  let dateValue = dateDOM.innerHTML;
+  let date = new Date(dateValue);
+
+  let intl = new Intl.DateTimeFormat('en-US', {month : "long", year: "numeric"}).format(date);
+
+  dateDOM.innerHTML = intl;
+
+//**********************************************************************************
 //GENERATION GRID
 //**********************************************************************************
   const items = document.querySelectorAll(".grid_item");
