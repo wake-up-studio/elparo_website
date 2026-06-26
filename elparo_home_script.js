@@ -129,7 +129,7 @@ console.log("Hey cruel world 3");
                 from: "start",
                 grid: [1,3],
             },
-            ease: "power3.in",
+            ease: "power3.out",
         }
     )
   
