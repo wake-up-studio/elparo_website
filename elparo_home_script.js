@@ -112,7 +112,7 @@ console.log("Hey cruel world 3");
             trigger: ".scroll_effect_text",
             markers: true,
             start: "-15% bottom",
-            end: "bottom bottom",
+            end: "60% 75%",
             scrub: 1,
             duration: 5000,
         }
