@@ -381,6 +381,6 @@ const tags = gsap.utils.toArray(".tag_scrollbar");
     });
     
     ScrollTrigger.addEventListener("refreshInit", () => gsap.set(".image", {y: 0}));
-    }
+
 });
   
