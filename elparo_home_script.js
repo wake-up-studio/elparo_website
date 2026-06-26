@@ -114,8 +114,8 @@ console.log("Hey cruel world 3");
         scrollTrigger: {
             trigger: ".scroll_effect_text",
             markers: true,
-            start: "15% bottom",
-            end: "150% bottom",
+            start: "top bottom",
+            end: "bottom bottom",
             scrub: 1,
             duration: 5000,
         }
