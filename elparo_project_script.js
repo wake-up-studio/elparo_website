@@ -122,6 +122,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
   const video_lightbox = document.querySelector(".video_lightbox");
 
     let src = video_content.getAttribute("src");
+  console.log(src);
 
     if(src.trim === '' || !src || src === "undefinedenablejsapi=1&amp;rel=0&amp;controls=0&amp;autoplay=1&amp;mute=1&amp;loop=1" || !video_content){
         video_lightbox.style.display = "none";
