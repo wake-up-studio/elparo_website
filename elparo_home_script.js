@@ -183,6 +183,8 @@ console.log("Hey cruel world 3");
 //**********************************************************************************
 //APPARITION TEXTE
 //**********************************************************************************
+  console.log(document.querySelector(".scroll_effect_text"));
+  console.log(document.querySelectorAll(".scroll_effect_text_item"));
   
    const tl_scroll = gsap.timeline({
         scrollTrigger: {
