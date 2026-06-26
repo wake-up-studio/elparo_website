@@ -110,7 +110,7 @@ console.log("Hey cruel world 3");
    const tl_scroll = gsap.timeline({
         scrollTrigger: {
             trigger: ".scroll_effect_text",
-            markers: true,
+            //markers: true,
             start: "-15% bottom",
             end: "60% 75%",
             scrub: 1,
