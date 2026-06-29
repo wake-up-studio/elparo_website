@@ -149,7 +149,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
   const video_lightbox = document.querySelector(".video_lightbox");
 
 console.log(video_content);
-  console.log(document.querySelector(".video_container iframe");
+  console.log(document.querySelector(".video_container iframe"));
   
     let src = video_content.getAttribute("src");
     console.log(src);
