@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", (event) => {
-console.log("Hey cruel world 3");
 //**********************************************************************************
 //TRANSITION
 //**********************************************************************************
@@ -183,17 +182,13 @@ console.log("Hey cruel world 3");
                 0
             );
 
-            console.log(isComplete);
-
             hoverAnim.eventCallback("onComplete", () => {
                 isComplete = true;
-                console.log(isComplete);
             });
 
             projets[i].addEventListener('mouseleave', () => {
                 if(isComplete === false) {
                     tl.reverse();
-                    console.log(isComplete);
                 }
                 else{
                     let tl2 = gsap.timeline();
@@ -212,7 +207,6 @@ console.log("Hey cruel world 3");
                         0
                     );
                     tl2.eventCallback("onComplete", () => {isComplete = false;});
-                    console.log(isComplete);
                 }
             })
         })
