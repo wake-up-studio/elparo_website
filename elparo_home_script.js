@@ -129,6 +129,85 @@ console.log("Hey cruel world 3");
             ease: "power3.in",
         }
     )
+
+//**********************************************************************************
+//HOVER
+//**********************************************************************************
+  const projets = document.querySelectorAll(".projetFromProjets");
+
+    for(let i=0; i<projets.length; i++) {
+        let isComplete = false;
+
+        projets[i].addEventListener('mouseenter', () => {
+            let tl = gsap.timeline();
+
+            let hoverAnim = tl.fromTo(
+                `.hover_projets${i}`,
+                {
+                    translateY: "-100%"
+                },
+                {
+                    translateY: 0,
+                    duration: 1,
+                    stagger: {
+                        each: 0.1,
+                        from: "start",
+                        grid: [1, 3],
+                    },
+                    ease: "expo.out",
+                },
+                0
+            );
+
+            console.log(isComplete);
+
+            hoverAnim.eventCallback("onComplete", () => {
+                isComplete = true;
+                console.log(isComplete);
+            });
+
+            projets[i].addEventListener('mouseleave', () => {
+                if(isComplete === false) {
+                    tl.reverse();
+                    console.log(isComplete);
+                }
+                else{
+                    let tl2 = gsap.timeline();
+                    tl2.to(
+                        `.hover_projets${i}`,
+                        {
+                            translateY: "100%",
+                            duration: 1,
+                            stagger: {
+                                each: 0.1,
+                                from: "start",
+                                grid: [1, 3],
+                            },
+                            ease: "expo.inOut",
+                        },
+                        0
+                    );
+                    tl2.eventCallback("onComplete", () => {isComplete = false;});
+                    console.log(isComplete);
+                }
+            })
+        })
+    }
+
+//**********************************************************************************
+//BATCH
+//**********************************************************************************
+    gsap.set(".projetFromProjets", {y: 100});
+
+    ScrollTrigger.batch(".projetFromProjets", {
+        //interval: 0.1, // time window (in seconds) for batching to occur.
+        onEnter: batch => gsap.to(batch, {opacity: 1, y: 0, stagger: {each: 0.15, grid: [1, 3]}, overwrite: true}),
+        onLeave: batch => gsap.set(batch, {opacity: 0, y: -100, overwrite: true}),
+        onEnterBack: batch => gsap.to(batch, {opacity: 1, y: 0, stagger: 0.15, overwrite: true}),
+        onLeaveBack: batch => gsap.set(batch, {opacity: 0, y: 100, overwrite: true})
+    })
+    
+    ScrollTrigger.addEventListener("refreshInit", () => gsap.set(".image", {y: 0}));
   
 //**********************************************************************************
 //TAGCLOUD
