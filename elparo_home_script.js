@@ -208,6 +208,30 @@ console.log("Hey cruel world 3");
     })
     
     ScrollTrigger.addEventListener("refreshInit", () => gsap.set(".image", {y: 0}));
+
+
+//**********************************************************************************
+//FOOTER
+//**********************************************************************************
+    gsap.set(".col_footer", {height: "0%"})
+    gsap.set(".text_footer", {opacity: "0%"})
+
+    let tl_footer = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".cols_footer",
+            pin: true,
+            //markers: true,
+            scrub: 1,
+            start: "bottom bottom",
+            end: "bottom -50%%",
+        }
+    });
+
+    tl_footer
+        .to(".col_footer_1", {height: "90%", ease: "power3.out"})
+        .to(".col_footer_2", {height: "95%", ease: "power3.out"}, "-=75%")
+        .to(".col_footer_3", {height: "100%", ease: "power3.out"}, "-=60%")
+        .to(".text_footer", {opacity: "100%", stagger:{each: 0.15}, ease: "power3.out"})
   
 //**********************************************************************************
 //TAGCLOUD
