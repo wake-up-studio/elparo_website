@@ -188,7 +188,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 //**********************************************************************************
 //APPARITION TEXTE
 //**********************************************************************************
-   gsap.set(".scroll_effect_text_item", {height: "200vh"})
+   gsap.set(".scroll_effect_text_item", {height: "220vh"})
 
     const tl_scroll = gsap.timeline({
         scrollTrigger: {
