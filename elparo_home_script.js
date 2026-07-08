@@ -188,12 +188,14 @@ document.addEventListener("DOMContentLoaded", (event) => {
 //**********************************************************************************
 //APPARITION TEXTE
 //**********************************************************************************
-   const tl_scroll = gsap.timeline({
+   gsap.set(".scroll_effect_text_item", {height: "200vh"})
+
+    const tl_scroll = gsap.timeline({
         scrollTrigger: {
             trigger: ".scroll_effect_text",
-            //markers: true,
-            start: "-15% bottom",
-            end: "60% 75%",
+            markers: true,
+            start: "-100% bottom",
+            end: "0% 110%",
             scrub: 1,
             duration: 5000,
         }
@@ -201,7 +203,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     tl_scroll.to(
         ".scroll_effect_text_item", {
-            translateX: "100vw",
+            height: "105vh",
             stagger: {
                 each: 0.1,
                 from: "start",
