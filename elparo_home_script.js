@@ -193,7 +193,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const tl_scroll = gsap.timeline({
         scrollTrigger: {
             trigger: ".scroll_effect_text",
-            markers: true,
+            //markers: true,
             start: "-100% bottom",
             end: "0% 110%",
             scrub: 1,
