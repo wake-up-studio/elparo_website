@@ -281,7 +281,7 @@ function horizontalLoop(items, config) {
 //**********************************************************************************
 //APPARITION TEXTE
 //**********************************************************************************
-   gsap.set(".scroll_effect_text_item", {height: "220vh"})
+   gsap.set(".scroll_effect_text_item", {height: "240vh"})
 
     const tl_scroll = gsap.timeline({
         scrollTrigger: {
